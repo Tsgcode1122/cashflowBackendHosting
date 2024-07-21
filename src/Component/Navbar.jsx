@@ -1,10 +1,20 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { LogoutOutlined, LoginOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+import {
+  MailOutlined,
+  WhatsAppOutlined,
+  SendOutlined,
+  HomeOutlined,
+  GiftOutlined,
+  CreditCardOutlined,
+  DashboardOutlined,
+  LoginOutlined,
+} from "@ant-design/icons";
 import logo from "../Images/CashLogo.png";
 import Ham from "../Images/ham.png";
+import logoicon from "../Images/loi.png";
 import WorkInProgress from "./WorkInProgress";
 import { useUserData } from "../context/UserDataContext";
 import ProfileModal from "../pages/ProfileModal";
@@ -63,33 +73,51 @@ const Navbar = () => {
       <NavHeight></NavHeight>
       <Sidebar isOpen={isSidebarOpen} ref={sidebarRef}>
         <CloseIcon onClick={toggleSidebar}>X</CloseIcon>
-        <WorkInProgress />
-        {/* <SidebarContent>
-          <Link to="/" onClick={closeSidebar}>
-            <img src={logoicon} alt="Home Icon" />
-            <span>Home</span>
-          </Link>
-          <Link to="/gallery" onClick={closeSidebar}>
-            <img src={logoicon} alt="Gallery Icon" />
-            <span>Gallery</span>
-          </Link>
-          <Link to="/about" onClick={closeSidebar}>
-            <img src={logoicon} alt="About Icon" />
-            <span>About</span>
-          </Link>
-          <Link to="/booking" onClick={closeSidebar}>
-            <img src={logoicon} alt="Book Now Icon" />
-            <span>Book Now</span>
-          </Link>
-          <Link to="/policies" onClick={closeSidebar}>
-            <img src={logoicon} alt="Policies Icon" />
-            <span>Policies</span>
-          </Link>
-          <Link to="/contact" onClick={closeSidebar}>
-            <img src={logoicon} alt="Contact Us Icon" />
-            <span>Contact Us</span>
-          </Link>
-        </SidebarContent> */}
+        {/* <WorkInProgress /> */}
+        <SidebarContent>
+          <LinkContainer>
+            <Link to="/" onClick={closeSidebar}>
+              <HomeOutlined />
+              <span>Home</span>
+            </Link>
+            <Link to="/offer" onClick={closeSidebar}>
+              <GiftOutlined />
+              <span>Offer</span>
+            </Link>
+            <Link to="/subscription" onClick={closeSidebar}>
+              <CreditCardOutlined />
+              <span>Subscriptions</span>
+            </Link>
+
+            <Link to="/user-dashboard" onClick={closeSidebar}>
+              <DashboardOutlined />
+              <span>Dashboard</span>
+            </Link>
+          </LinkContainer>
+          <Contact>
+            <h3>Contact Us</h3>
+            <div>
+              <ContactItem>
+                <MailOutlined style={{ marginRight: 8 }} />
+                <ContactText href="mailto:cashflowcaptital@gmail.com">
+                  cashflowcaptital@gmail.com
+                </ContactText>
+              </ContactItem>
+              <ContactItem>
+                <WhatsAppOutlined style={{ marginRight: 8 }} />
+                <ContactText href="https://wa.me/your_whatsapp_number">
+                  +23456789
+                </ContactText>
+              </ContactItem>
+              <ContactItem>
+                <SendOutlined style={{ marginRight: 8 }} />
+                <ContactText href="https://t.me/your_telegram_username">
+                  +23456789333
+                </ContactText>
+              </ContactItem>
+            </div>
+          </Contact>
+        </SidebarContent>
       </Sidebar>
       <ProfileModal
         visible={modalVisible}
@@ -100,6 +128,47 @@ const Navbar = () => {
   );
 };
 
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: 5px;
+  margin-bottom: 10px;
+`;
+const Contact = styled.div`
+  padding: 20px 0 40px 20px;
+  display: flex;
+  background-color: #f0f0f0;
+  flex-direction: column;
+  border-radius: 5px;
+  div {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+`;
+
+const LogoIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+`;
+const ContactItem = styled.span`
+  display: flex;
+  align-items: left;
+  /* flex-direction: column; */
+  margin-bottom: 5px;
+`;
+
+const ContactText = styled.a`
+  color: #000;
+  text-decoration: none;
+  font-size: 15px !important;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 const NavHeight = styled.div`
   height: 3rem;
 `;
@@ -113,17 +182,6 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const IconWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: white;
-  align-items: center;
-`;
-const IconName = styled.span`
-  font-size: 12px;
-  margin-top: 5px;
-`;
 const Login = styled.div``;
 const StyledNavbar = styled.div`
   position: fixed;
@@ -168,7 +226,7 @@ const Sidebar = styled.div`
   width: 300px;
   height: 100vh;
   background-color: #ffffff;
-  border-radius: 0 20px 20px 0;
+  border-radius: 20px 0 0 20px;
   border-left: 0.5px solid #313538;
   transition: right 0.5s ease-in-out;
   z-index: 1000;
@@ -184,11 +242,16 @@ const SidebarContent = styled.div`
   list-style: none;
   a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: black;
     align-items: center;
+    background: #f6f6f6;
+    border-radius: 10px;
+
+    padding: 8px;
     display: flex;
-    gap: 10px;
+
+    gap: 20px;
     img {
       max-width: 100%;
       height: 25px;
