@@ -54,13 +54,13 @@ const CardContainer = styled.div`
   align-items: center;
   gap: 20px;
   @media screen and (max-width: 320px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
 `;
 const Carder = styled.div`
@@ -84,8 +84,10 @@ const Card = styled.div`
     padding: 10px 8px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
+    padding: 10px 8px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
+    padding: 10px 8px;
   }
 `;
 
@@ -109,18 +111,18 @@ const IconWrapper = styled.div`
     height: 50px;
   }
   @media screen and (max-width: 320px) {
-    font-size: 26px;
-    height: 60px;
-    width: 60px;
+    height: 80px;
+    left: -30px;
+    width: 80px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    font-size: 26px;
     height: 80px;
+    left: -30px;
     width: 80px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    font-size: 26px;
     height: 80px;
+    left: -30px;
     width: 80px;
   }
 `;
@@ -156,13 +158,13 @@ const ContentWrapper = styled.div`
   gap: 10px;
   padding: 0 20px 0 50px;
   @media screen and (max-width: 320px) {
-    padding: 0 10px 0 20px;
+    padding: 0 5px 0 50px;
   }
   @media (min-width: 321px) and (max-width: 399px) {
-    padding: 0 5px 0 35px;
+    padding: 0 5px 0 50px;
   }
   @media (min-width: 400px) and (max-width: 499px) {
-    padding: 0 10px 0 30px;
+    padding: 0 10px 0 50px;
   }
 `;
 
@@ -172,7 +174,7 @@ const CardTitle = styled.h3`
   font-weight: 600;
   margin: 0;
   @media screen and (max-width: 320px) {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
   }
   @media (min-width: 321px) and (max-width: 399px) {
