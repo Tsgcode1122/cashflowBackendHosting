@@ -180,7 +180,7 @@ const ListItem = styled.li`
   &::before {
     content: "✔";
     padding-right: 10px;
-    color: #0d9efa;
+    color: #0d9efa !important;
     font-weight: bold;
     display: inline-block;
     width: 1em;
