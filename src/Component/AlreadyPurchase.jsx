@@ -63,7 +63,15 @@ const Header = styled.h1`
   text-align: center;
   color: #0d9efa;
   font-weight: 500;
-  padding: 20px 60px 0 60px;
+  padding: 1px 60px 0 60px;
+  position: relative;
+`;
+const Head = styled.h1`
+  text-align: center;
+
+  color: #0d9efa;
+  font-weight: 500;
+  padding: 20px 10px 0 10px;
   position: relative;
 `;
 
@@ -165,15 +173,15 @@ const ListItem = styled.div`
   margin-bottom: 8px;
   @media screen and (max-width: 320px) {
     font-size: 0.8rem;
-    padding: 0.8rem 0;
+    padding: 0.4rem 0;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1rem;
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
   }
   @media (min-width: 400px) and (max-width: 499px) {
     font-size: 1.1rem;
-    padding: 0.8rem 0;
+    padding: 0.6rem 0;
   }
 `;
 const PriceSection = styled.div`
@@ -190,13 +198,9 @@ const Price = styled.div`
   align-items: center;
   color: white;
   background-color: #0d9efa;
-  border: 0.005px solid #97d3f8;
+  border: 1px solid #379ddd;
   border-radius: 25px;
-  box-shadow:
-    0 0 5px #0d9efa,
-    0 0 8px #0d9efa,
-    0 0 4px #0d9efa,
-    0 0 6px #0d9efa;
+
   cursor: pointer;
   transition:
     background-color 0.3s ease,
@@ -256,13 +260,23 @@ const Description = styled.p`
     font-size: 1rem;
   }
 `;
+const HeadWhite = styled.p`
+  color: white;
+  margin: 0;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  margin-top: 10px;
+`;
+
 const Styledp = styled.p`
   color: white;
-
-  font-size: 0.9rem;
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 1rem;
   font-weight: 200;
   @media screen and (max-width: 320px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1rem;
@@ -281,7 +295,7 @@ const End = styled.p`
   font-size: 0.9rem;
   font-weight: 200;
   @media screen and (max-width: 320px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   @media (min-width: 321px) and (max-width: 399px) {
     font-size: 1rem;
@@ -317,7 +331,10 @@ const AlreadyPurchase = () => {
     <Container>
       <Contents>
         <StarsBackground />
-        <Header>How your free trial works</Header>
+        <HeadWhite>Already purchased?</HeadWhite>
+        <Header>
+          How your free trial <br /> works?
+        </Header>
         <NewBg>
           <Section>
             <Icon src={lockIcon} alt="lock icon" />
@@ -376,7 +393,7 @@ const AlreadyPurchase = () => {
             <Styledp>Cancel anytime!</Styledp>
           </PriceSection>
           <div>
-            <Header>Final Choice</Header>
+            <Head>Final Choice</Head>
             <Description>
               This is your final choice to experience financial independence,
               you’ve spent hundreds of thousands in university fees to come out

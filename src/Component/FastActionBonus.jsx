@@ -30,10 +30,18 @@ const Contents = styled.div`
 const Cont = styled.div`
   background-color: #0a132d;
   border-radius: 15px;
-  padding: 20px 40px;
+  padding: 20px 1rem;
   max-width: 270px;
   display: flex;
-
+  @media screen and (max-width: 320px) {
+    max-width: 240px;
+  }
+  @media (min-width: 321px) and (max-width: 399px) {
+    max-width: 260px;
+  }
+  @media (min-width: 400px) and (max-width: 499px) {
+    max-width: 260px;
+  }
   flex-direction: column;
 
   color: white;
@@ -124,13 +132,9 @@ const Price = styled.div`
   color: white;
   gap: 10px;
   background-color: #0d9efa;
-  border: 0.005px solid #97d3f8;
+  border: 1px solid #379ddd;
   border-radius: 25px;
-  box-shadow:
-    0 0 5px #0d9efa,
-    0 0 8px #0d9efa,
-    0 0 4px #0d9efa,
-    0 0 6px #0d9efa;
+
   cursor: pointer;
   transition:
     background-color 0.3s ease,
