@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import user from "../Images/team1.jpg";
 import user1 from "../Images/ogboona.png";
-import user2 from "../Images/unknown.png";
+import user2 from "../Images/team3.jpg";
 import bg from "../Images/darkb.png";
 import GlowingDivider from "./GlowingDivider";
 const skeletonLoading = keyframes`
