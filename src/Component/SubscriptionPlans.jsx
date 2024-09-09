@@ -2,9 +2,8 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import bg from "../Images/darkb.png";
 import editorChoiceImage from "../Images/bestvalue.png";
-
+import { Link } from "react-router-dom";
 import StarsBackground from "./StarsBackground";
-
 import { GiCheckMark } from "react-icons/gi";
 import SwipeComponent from "./SwipeComponent";
 
@@ -279,7 +278,9 @@ const rippleAnimation = keyframes`
   }
 `;
 
-const JoinButton = styled.button`
+const JoinButton = styled(Link)`
+  text-decoration: none;
+  display: inline-block;
   position: relative;
   background-color: ${(props) => props.buttonColor};
   color: ${(props) => props.textButColor};
@@ -291,7 +292,6 @@ const JoinButton = styled.button`
   cursor: pointer;
   overflow: hidden;
   transition: background-color 0.3s ease;
-  margin: 0 !important;
 
   &:hover {
     background-color: #121027;
@@ -520,6 +520,7 @@ const SubscriptionPlans = () => {
               <JoinButton
                 buttonColor={plan.buttonColor}
                 textButColor={plan.textButColor}
+                to="/login"
               >
                 JOIN NOW
               </JoinButton>
