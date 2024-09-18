@@ -139,10 +139,103 @@ const Navbar = () => {
         onClose={() => setModalVisible(false)}
       />
       {isSidebarOpen && <Overlay onClick={closeSidebar} />}
+      <BigNav>
+        <Space2>
+          <div>
+            <Link to="/">
+              <Logo src={logo} alt="Logo" />
+            </Link>
+          </div>
+          <div>
+            <BigLinkContainer>
+              <Link to="/">
+                <span>Home</span>
+              </Link>
+              <Link to="/offer">
+                <span>Offer</span>
+              </Link>
+              <Link to="/subscription">
+                <span>Subscriptions</span>
+              </Link>
+
+              <Link to="/user-dashboard">
+                <span>Dashboard</span>
+              </Link>
+            </BigLinkContainer>
+          </div>
+          <div>
+            <Login>
+              {userData ? (
+                <LogoutButton />
+              ) : (
+                <StyledLink to="/login">
+                  <LoginOutlined />
+                  Login
+                </StyledLink>
+              )}
+            </Login>
+          </div>
+        </Space2>
+      </BigNav>
     </>
   );
 };
 
+// big Nav
+const BigNav = styled.div`
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999 !important;
+  background-color: #0e161c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: top 0.3s;
+  img {
+    max-width: 100%;
+    height: 40px;
+  }
+  @media screen and (max-width: 799px) {
+    display: none;
+  }
+  @media screen and (min-width: 800px) {
+    position: fixed;
+  }
+`;
+const Space2 = styled.div`
+  padding: 4px 2rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+  @media screen and (min-width: 800px) {
+    padding: 4px 4rem;
+  }
+  @media screen and (min-width: 1000px) {
+    padding: 8px 6rem;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 10px 8rem;
+  }
+`;
+const BigLinkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  color: white;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration-line: underline;
+      color: white;
+      transform: scale(1.05);
+    }
+  }
+  span {
+    color: white !important;
+  }
+`;
 const Logo = styled.img`
   max-width: 100%;
   height: 30px !important;
@@ -223,16 +316,21 @@ const StyledLink = styled(Link)`
 
 const Login = styled.div``;
 const StyledNavbar = styled.div`
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999 !important;
-  background-color: #0e161c;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: top 0.3s;
-  img {
-    max-width: 100%;
-    height: 40px;
+  @media screen and (max-width: 799px) {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999 !important;
+    background-color: #0e161c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s;
+    img {
+      max-width: 100%;
+      height: 40px;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    display: none;
   }
 `;
 
