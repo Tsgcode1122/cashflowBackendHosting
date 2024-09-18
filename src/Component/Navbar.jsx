@@ -68,9 +68,17 @@ const Navbar = () => {
           <Link to="/">
             <Logo src={logo} alt="Logo" />
           </Link>
-          <MenuToggle onClick={toggleSidebar}>
-            <img src={Ham} alt="Menu Icon" />
-          </MenuToggle>
+          <Two>
+            <BookACall
+              href="https://calendly.com/yourusername/eventname"
+              target="_blank"
+            >
+              BOOK A CALL
+            </BookACall>
+            <MenuToggle onClick={toggleSidebar}>
+              <img src={Ham} alt="Menu Icon" />
+            </MenuToggle>
+          </Two>
         </HeadSpace>
       </StyledNavbar>
       <NavHeight></NavHeight>
@@ -180,7 +188,20 @@ const Navbar = () => {
     </>
   );
 };
+const Two = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+const BookACall = styled.a`
+  background: #379ddd;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
 
+  text-decoration: none;
+`;
 // big Nav
 const BigNav = styled.div`
   position: fixed;
